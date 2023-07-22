@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:q_r_code_scanner/result_screen.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:q_r_code_scanner/pages/Qrcode_overlay.dart';
+import 'package:q_r_code_scanner/pages/result_screen.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-const bgcolor = Color(0xfffafafa);
+const bgcolor = Colors.grey;
 
 class QRScanner extends StatefulWidget {
   const QRScanner({super.key});
@@ -25,7 +25,6 @@ class _QRScannerState extends State<QRScanner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
       backgroundColor: bgcolor,
       appBar: AppBar(
         actions: [
@@ -36,21 +35,32 @@ class _QRScannerState extends State<QRScanner> {
                 });
                 controller.toggleTorch();
               },
-              icon: Icon(Icons.flashlight_on_outlined, color: isFlash ? Colors.grey :  Colors.black87)),
-          IconButton(onPressed: () {
-
-            setState(() {
-                  isFrontCamera =!isFrontCamera;
+              icon: Icon(
+                isFlash
+                    ? Icons.flashlight_off_outlined
+                    : Icons.flashlight_on_outlined,
+                color: isFlash ? Colors.white : Color(0xff98fb98),
+              )),
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  isFrontCamera = !isFrontCamera;
                 });
                 controller.switchCamera();
-          }, icon: Icon(Icons.camera_alt_outlined,color: isFrontCamera ? Colors.grey :  Colors.black87))
+              },
+              icon: Icon(
+                isFrontCamera
+                    ? Icons.cameraswitch_rounded
+                    : Icons.camera_alt_outlined,
+                color: isFrontCamera ? Colors.white : Color(0xff98fb98),
+              ))
         ],
         iconTheme: IconThemeData(color: Colors.black87),
         centerTitle: true,
         title: Text(
-          'QR Code Scanner',
+          'QR Code\'s Scanner',
           style: TextStyle(
-              color: Colors.black87,
+              color: Color(0xff98fb98),
               fontWeight: FontWeight.bold,
               letterSpacing: 1),
         ),
@@ -59,6 +69,7 @@ class _QRScannerState extends State<QRScanner> {
         width: double.infinity,
         padding: EdgeInsets.all(18),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Column(
@@ -67,7 +78,7 @@ class _QRScannerState extends State<QRScanner> {
                   Text(
                     'Place the QR Code in the Area',
                     style: TextStyle(
-                        color: Colors.black87,
+                        color: Color(0xff98fb98),
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 1),
@@ -76,7 +87,7 @@ class _QRScannerState extends State<QRScanner> {
                     'Scanning will started automatically ',
                     style: TextStyle(
                         fontSize: 16,
-                        color: Colors.black54,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0),
                   )
@@ -103,7 +114,9 @@ class _QRScannerState extends State<QRScanner> {
                                         ))));
                           }
                         })),
-                        
+                    QRScannerOverlay(
+                      overlayColour: Colors.grey,
+                    )
                   ],
                 )),
             Expanded(
@@ -112,7 +125,7 @@ class _QRScannerState extends State<QRScanner> {
               child: Text(
                 'Develop by EZIO Studio',
                 style: TextStyle(
-                    color: Colors.black87, fontSize: 14, letterSpacing: 1),
+                    color: Color(0xff98fb98), fontSize: 14, letterSpacing: 1),
               ),
             )),
           ],

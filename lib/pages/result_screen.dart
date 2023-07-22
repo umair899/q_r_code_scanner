@@ -6,20 +6,26 @@ import 'package:qr_flutter/qr_flutter.dart';
 const bgcolor = Color(0xfffafafa);
 
 class ResultScreen extends StatelessWidget {
-
   final String code;
   final Function() closedScreen;
-  const ResultScreen({super.key, required this.code, required this.closedScreen});
+  const ResultScreen(
+      {super.key, required this.code, required this.closedScreen});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgcolor,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          closedScreen();
-          Navigator.pop(context);
-        },icon: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.black87,),),
+        leading: IconButton(
+          onPressed: () {
+            closedScreen();
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.black87,
+          ),
+        ),
         centerTitle: true,
         title: const Text(
           'QR Code Scanner',
@@ -82,10 +88,8 @@ class ResultScreen extends StatelessWidget {
               ),
             )
           ],
-      
         ),
       ),
-      
     );
   }
 }
