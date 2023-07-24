@@ -86,7 +86,7 @@ class ResultScreen extends StatelessWidget {
                       letterSpacing: 1),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
