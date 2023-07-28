@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:qr_flutter/qr_flutter.dart';
 
 const bgcolor = Colors.grey;
@@ -12,6 +13,12 @@ class CodeGenerate extends StatefulWidget {
 }
 
 class _CodeGenerateState extends State<CodeGenerate> {
+// shareimage() async {
+//   XFile? image = await ImagePicker().pickImage(source: ImageSource.gallery);
+//   if(image == null)return;
+//   Share.shareFiles([data],);
+// }
+
   String data = "";
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,7 @@ class _CodeGenerateState extends State<CodeGenerate> {
         title: Text(
           'QR Code\'s Generator',
           style: TextStyle(
-              color: Color(0xff98fb98),
+              color: Colors.teal,
               fontWeight: FontWeight.bold,
               letterSpacing: 1),
         ),
@@ -70,10 +77,10 @@ class _CodeGenerateState extends State<CodeGenerate> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () {
-                // Clipboard.setData(ClipboardData(text: QrImage));
+                // _shareQRCodeImage(data);
               },
               child: Text(
-                'copy',
+                'Share',
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -86,3 +93,15 @@ class _CodeGenerateState extends State<CodeGenerate> {
     );
   }
 }
+
+  // void _shareQRCodeImage(String qrData) async {
+  //   try {
+  //     final qrImage = QrImage(data: qrData, version: QrVersions.auto,);
+  //     final byteData = await qrImage.toByteData();
+  //     final Uint8List pngBytes = byteData.buffer.asUint8List();
+  //     await Share.file('QR Code', 'qr_code.png', pngBytes, 'image/png');
+  //   } 
+  //   catch (e) {
+  //     print('Error sharing QR code: $e');
+  //   }
+  // }

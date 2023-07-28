@@ -39,7 +39,7 @@ class _QRScannerState extends State<QRScanner> {
                 isFlash
                     ? Icons.flashlight_off_outlined
                     : Icons.flashlight_on_outlined,
-                color: isFlash ? Colors.white : Color(0xff98fb98),
+                color: isFlash ? Colors.white : Colors.teal,
               )),
           IconButton(
               onPressed: () {
@@ -52,7 +52,7 @@ class _QRScannerState extends State<QRScanner> {
                 isFrontCamera
                     ? Icons.cameraswitch_rounded
                     : Icons.camera_alt_outlined,
-                color: isFrontCamera ? Colors.white : Color(0xff98fb98),
+                color: isFrontCamera ? Colors.white : Colors.teal,
               ))
         ],
         iconTheme: IconThemeData(color: Colors.black87),
@@ -60,7 +60,7 @@ class _QRScannerState extends State<QRScanner> {
         title: Text(
           'QR Code\'s Scanner',
           style: TextStyle(
-              color: Color(0xff98fb98),
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               letterSpacing: 1),
         ),
@@ -78,7 +78,7 @@ class _QRScannerState extends State<QRScanner> {
                   Text(
                     'Place the QR Code in the Area',
                     style: TextStyle(
-                        color: Color(0xff98fb98),
+                        color: Colors.teal,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 1),
