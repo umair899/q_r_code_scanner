@@ -7,7 +7,6 @@ const bgcolor = Colors.grey;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,24 +37,29 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              leading: Icon(
-                Icons.home_sharp,
-                color: Colors.white,
+            GestureDetector(
+              // onTap: (){
+              //   Get.to(HomePage());
+              // },
+              child: ListTile(
+                leading: Icon(
+                  Icons.home_sharp,
+                  color: Colors.white,
+                ),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.white,
+                ),
+                title: Text('Home',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    )),
+                onTap: () {},
               ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_outlined,
-                color: Colors.white,
-              ),
-              title: Text('Home',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  )),
-              onTap: () {},
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal:16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
                 color: Colors.white,
                 thickness: 1,
@@ -76,8 +80,9 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   )),
               onTap: () {},
-            ),  Padding(
-              padding:  EdgeInsets.symmetric(horizontal:16.0),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
                 color: Colors.white,
                 thickness: 1,
@@ -98,8 +103,9 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   )),
               onTap: () {},
-            ),  Padding(
-              padding:  EdgeInsets.symmetric(horizontal:16.0),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
                 color: Colors.white,
                 thickness: 1,
@@ -120,15 +126,15 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   )),
               onTap: () {},
-            ),  Padding(
-              padding:  EdgeInsets.symmetric(horizontal:16.0),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
                 color: Colors.white,
                 thickness: 1,
               ),
             ),
           ],
-          
         ),
         backgroundColor: Colors.grey[500],
       ),

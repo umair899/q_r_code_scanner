@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:q_r_code_scanner/main_page/code_enter_page.dart';
+import 'package:q_r_code_scanner/main_page/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
